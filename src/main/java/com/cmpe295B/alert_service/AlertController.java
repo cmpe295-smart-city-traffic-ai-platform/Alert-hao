@@ -1,6 +1,7 @@
 package com.cmpe295B.alert_service;
 
 import com.cmpe295B.model.Alert;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,11 +22,12 @@ public class AlertController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private List<Alert> alerts = new ArrayList<>();
+    //private List<Alert> alerts = new ArrayList<>();
 
     @GetMapping("/generateAlerts")
-    public ResponseEntity<String> generateAlerts() {
+    public ResponseEntity<List> generateAlerts() {
         try {
+            List<Alert> alerts = new ArrayList<>();
             // Step 1: Call /getdronesformap API
             String dronesUrl = "http://localhost:5001/api/v1/droneScheduler/getdronesformap";
 
@@ -76,15 +78,17 @@ public class AlertController {
             );
             alerts.add(trafficAlert);
 
-            return ResponseEntity.ok("Alerts generated successfully");
+            //return ResponseEntity.ok("Alerts generated successfully");
+            return new ResponseEntity<>(alerts, HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(500).body("Error generating alerts: " + e.getMessage());
+            //return ResponseEntity.status(500).body("Error generating alerts: " + e.getMessage());
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    /*
     @GetMapping("/alerts")
     public List<Alert> getAlerts() {
         return alerts;
-    }
+    }*/
 }
