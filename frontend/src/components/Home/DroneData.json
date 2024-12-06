@@ -1,0 +1,19 @@
+[
+    {
+        "active" : true,
+        "createdAt" : "2024-10-18T03:29:00.228+00:00",
+        "id": "3b50b3db-41cd-4991-a0bc-2470cf70d019",
+        "location": "37.381375, -121.949905",
+        "name": "Drone 1",
+        "updatedAt": "2024-10-18T03:29:00.228+00:00",
+        "userId" : "d04b59ff-4baf-47e2-986b-7a7d3e73091e"
+    },{
+        "active" : true,
+        "createdAt" : "2024-10-18T03:29:00.228+00:00",
+        "id": "fa158589-ca33-43a7-bfb1-d64a96d4f91b",
+        "location": "37.327567, -121.809179",
+        "name": "Drone 2",
+        "updatedAt": "2024-10-18T03:29:00.228+00:00",
+        "userId" : "d04b59ff-4baf-47e2-986b-7a7d3e73091e"  
+    }
+]

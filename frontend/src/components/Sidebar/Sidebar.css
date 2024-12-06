@@ -1,0 +1,49 @@
+/*body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }*/
+  
+  .sidebar {
+    width: 304px;
+    height: 100vh;
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    padding-top: 20px;
+    margin: 0; 
+  }
+  
+  .sidebar .nav-link {
+    color: white;
+    padding: 15px 20px; /* More spacing */
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .sidebar .nav-link.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .sidebar .nav-link i {
+    margin-right: 15px; /* Space between icon and text */
+  }
+  
+  .sidebar ul {
+    padding-left: 0;
+    list-style: none; /* Remove bullets */
+  }
+  
+  /*.container {
+    margin-left: 280px;
+    padding-top: 20px;
+    max-width: 900px; 
+  }*/
+  
