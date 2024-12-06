@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: alert-service-ingress-controller
+  namespace: smart-city-traffic
+  annotations:
+    kubernetes.io/ingress.class: kong
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: kong
+  rules:
+    - http:
+        paths:
+          - path: /api/v1/alert(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: alert-service
+                port:
+                  number: 8080

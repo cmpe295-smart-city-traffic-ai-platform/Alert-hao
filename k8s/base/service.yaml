@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: alert-service
+  namespace: smart-city-traffic
+spec:
+  selector:
+    app: alert-service
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
