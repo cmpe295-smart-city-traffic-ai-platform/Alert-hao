@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alert-service-deployment
+  labels:
+    app: alert-service
+  namespace: smart-city-traffic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alert-service
+  template:
+    metadata:
+      labels:
+        app: alert-service
+    spec:
+      containers:
+        - name: alert-service
+          # image pushed to ECR in AWS
+          image: 319282596033.dkr.ecr.us-east-1.amazonaws.com/smart_city_traffic/alert_service:0.0.1
+          imagePullPolicy: Always
